@@ -10,7 +10,7 @@ const QuestionCard = ({BASE_URL}: {BASE_URL:any}) => {
     const fetchQuestions = async () => {
         // this function calls the API and sets the result via setQuestions
         try {
-            const response = await fetch(`${BASE_URL}?amount=1&type=multiple`, {signal});
+            const response = await fetch(`${BASE_URL}?amount=10&difficulty=easy&type=multiple`, {signal});
             const result = await response.json();
             setQuestions(result);
             console.log(JSON.stringify(result))
@@ -46,7 +46,7 @@ type DataProps = {
 const RenderData = ({ data }: DataProps) => {
     // Here is where the data is supposed to be rendered.
     return (
-        <div >
+        <div>
             <h2>{data.question}</h2>
             <button>{data.correct_answer}</button>
             <button>{data.incorrect_answers}</button>

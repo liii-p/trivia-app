@@ -1,11 +1,11 @@
 import './App.css'
-import Menu from './functions/Menu'
+import Menu from './components/Menu/Menu.tsx'
 
 function App() {
  
 
   return (
-    <div>
+    <div className="App">
       <h1>Trivia App</h1>
       <Menu />
     </div>
