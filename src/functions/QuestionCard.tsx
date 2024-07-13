@@ -1,22 +1,25 @@
 import { useState, useEffect } from "react";
 
 
-const QuestionCard = () => {
+const QuestionCard = ({BASE_URL}: {BASE_URL:any}) => {
     const [questions, setQuestions] = useState([]);
     console.log("QuestionCard activated")
+    let controller = new AbortController();
+    const signal = controller.signal;
+
+    const fetchQuestions = async () => {
+        try {
+            const response = await fetch(`${BASE_URL}?amount=1&type=multiple`, {signal});
+            const result = await response.json();
+            setQuestions(result);
+            console.log(JSON.stringify(result))
+        }
+        catch (error: any) {
+            console.error('Error fetching data:', error);
+        }
+    };
 
     useEffect(() => {
-        const fetchQuestions = async () => {
-            try {
-                const response = await fetch('https://opentdb.com/api.php?amount=1&type=multiple');
-                const result = await response.json();
-                setQuestions(result);
-                console.log(JSON.stringify(result))
-            }
-            catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
         fetchQuestions();
     }, []);
 
