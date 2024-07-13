@@ -46,7 +46,7 @@ type DataProps = {
 const RenderData = ({ data }: DataProps) => {
     // Here is where the data is supposed to be rendered.
     return (
-        <div>
+        <div className={styles.RenderData}>
             <h2>{data.question}</h2>
             <button>{data.correct_answer}</button>
             <button>{data.incorrect_answers}</button>
