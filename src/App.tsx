@@ -1,7 +1,5 @@
-//import { useState } from 'react';
 import './App.css'
 import Menu from './functions/Menu'
-//import QuestionCard from './functions/QuestionCard';
 
 function App() {
  

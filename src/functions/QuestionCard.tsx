@@ -8,6 +8,7 @@ const QuestionCard = ({BASE_URL}: {BASE_URL:any}) => {
     const signal = controller.signal;
 
     const fetchQuestions = async () => {
+        // this function calls the API and sets the result via setQuestions
         try {
             const response = await fetch(`${BASE_URL}?amount=1&type=multiple`, {signal});
             const result = await response.json();
@@ -15,11 +16,13 @@ const QuestionCard = ({BASE_URL}: {BASE_URL:any}) => {
             console.log(JSON.stringify(result))
         }
         catch (error: any) {
+            // if any error occurs, catch it here.
             console.error('Error fetching data:', error);
         }
     };
 
     useEffect(() => {
+        // declare fetchQuestions outside of useEffect and call inside here
         fetchQuestions();
     }, []);
 
@@ -41,6 +44,7 @@ type DataProps = {
 };
 
 const RenderData = ({ data }: DataProps) => {
+    // Here is where the data is supposed to be rendered.
     return (
         <div >
             <h2>{data.question}</h2>
