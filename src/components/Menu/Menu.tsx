@@ -3,15 +3,15 @@ import QuestionCard from "../QuestionCard/QuestionCard";
 import Dropdown from "../Dropdown/Dropdown";
 import styles from "./Menu.module.scss";
 
-const Menu: React.FC = (): JSX.Element => {
-  const baseURL = "https://opentdb.com/api.php";
-
+const Menu = () => {
   const [visible, setVisible] = useState(true);
   const [showDropdown, setshowDropdown] = useState<boolean>(false);
   const [selectDifficulty, setSelectDifficulty] = useState<string>("");
   const difficulties = () => {
     return ["Easy", "Medium", "Hard"];
   };
+  // TODO: set default difficulty, else check the user has selected difficulty
+  const baseURL = `https://opentdb.com/api.php?amount=1&difficulty=${selectDifficulty.toLowerCase()}&type=multiple`;
 
   const handleClick = () => {
     setVisible(false);
