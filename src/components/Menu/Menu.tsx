@@ -1,7 +1,7 @@
 import { useState } from "react";
 import QuestionCard from "../QuestionCard/QuestionCard";
 import Dropdown from "../Dropdown/Dropdown";
-import styles from "./Menu.module.scss"
+import styles from "./Menu.module.scss";
 
 const Menu: React.FC = (): JSX.Element => {
   const baseURL = "https://opentdb.com/api.php";
@@ -16,7 +16,7 @@ const Menu: React.FC = (): JSX.Element => {
   const handleClick = () => {
     setVisible(false);
     console.log("handling click");
-  }
+  };
 
   // toggle the dropdown menu
   const toggleDropdown = () => {
@@ -36,36 +36,40 @@ const Menu: React.FC = (): JSX.Element => {
   };
 
   // If the user has clicked the start button, the questioncard will be displayed instead.
-  if (!visible) return <QuestionCard BASE_URL={baseURL}/>;
+  if (!visible) return <QuestionCard BASE_URL={baseURL} />;
 
-    return(
-        <div className={styles.Menu}>
-          
-            <p>Hello!</p>
-            {/* Add category dropdown selection */}
-            {/* Add difficulty dropdown selection */}
-            <div>
-            {selectDifficulty ? `${selectDifficulty} mode selected.` : "Select game difficulty"}
-            </div>
-            <button className={showDropdown ? "active" : undefined}
-            onClick={(): void => toggleDropdown()}
-            onBlur={(e: React.FocusEvent<HTMLButtonElement>): void =>
-              dismissHandler(e)
-            }
-            >
-              <div>{selectDifficulty ? "Select: " + selectDifficulty : "Select..."}</div>
-              {showDropdown && (
-                <Dropdown 
-                  selectDifficulty={difficulties()}
-                  showDropDown={false}
-                  toggleDropDown={(): void => toggleDropdown()}
-                  difficultySelection={difficultySelection}
-                />
-              )}
-            </button>
-            <button onClick={handleClick}>Start</button>
+  return (
+    <div className={styles.Menu}>
+      <p>Hello!</p>
+      {/* Add category dropdown selection */}
+      {/* Add difficulty dropdown selection */}
+      <div>
+        {selectDifficulty
+          ? `${selectDifficulty} mode selected.`
+          : "Select game difficulty"}
+      </div>
+      <button
+        className={showDropdown ? "active" : undefined}
+        onClick={(): void => toggleDropdown()}
+        onBlur={(e: React.FocusEvent<HTMLButtonElement>): void =>
+          dismissHandler(e)
+        }
+      >
+        <div>
+          {selectDifficulty ? "Select: " + selectDifficulty : "Select..."}
         </div>
-    );
+        {showDropdown && (
+          <Dropdown
+            selectDifficulty={difficulties()}
+            showDropDown={false}
+            toggleDropDown={(): void => toggleDropdown()}
+            difficultySelection={difficultySelection}
+          />
+        )}
+      </button>
+      <button onClick={handleClick}>Start</button>
+    </div>
+  );
 };
 
 export default Menu;
