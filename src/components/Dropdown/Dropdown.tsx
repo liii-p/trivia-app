@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
-
-type DropdownProps = {
-  selectDifficulty: string[];
-  showDropDown: boolean;
-  toggleDropDown: Function;
-  difficultySelection: Function;
-};
+import { DropdownProps } from "../../types";
 
 const Dropdown: React.FC<DropdownProps> = ({
   selectDifficulty,

@@ -1,22 +1,17 @@
 import { useState } from "react";
-import QuestionCard from "../QuestionCard/QuestionCard";
 import Dropdown from "../Dropdown/Dropdown";
 import styles from "./Menu.module.scss";
+import { MenuType } from "../../types";
 
-const Menu = () => {
-  const [visible, setVisible] = useState(true);
+const Menu: React.FC<MenuType> = ({
+  onStart,
+  difficultyFunc,
+  difficultyOptions,
+  selectDifficulty,
+}: MenuType): JSX.Element => {
   const [showDropdown, setshowDropdown] = useState<boolean>(false);
-  const [selectDifficulty, setSelectDifficulty] = useState<string>("");
-  const difficulties = () => {
-    return ["Easy", "Medium", "Hard"];
-  };
-  // TODO: set default difficulty, else check the user has selected difficulty
-  const baseURL = `https://opentdb.com/api.php?amount=1&difficulty=${selectDifficulty.toLowerCase()}&type=multiple`;
 
-  const handleClick = () => {
-    setVisible(false);
-    console.log("handling click");
-  };
+  // TODO: set default difficulty, else check the user has selected difficulty
 
   // toggle the dropdown menu
   const toggleDropdown = () => {
@@ -30,13 +25,7 @@ const Menu = () => {
     }
   };
 
-  // consume difficulty selection from child component with callback function
-  const difficultySelection = (difficulty: string) => {
-    setSelectDifficulty(difficulty);
-  };
-
   // If the user has clicked the start button, the questioncard will be displayed instead.
-  if (!visible) return <QuestionCard BASE_URL={baseURL} />;
 
   return (
     <div className={styles.Menu}>
@@ -60,14 +49,14 @@ const Menu = () => {
         </div>
         {showDropdown && (
           <Dropdown
-            selectDifficulty={difficulties()}
+            selectDifficulty={difficultyOptions}
             showDropDown={false}
             toggleDropDown={(): void => toggleDropdown()}
-            difficultySelection={difficultySelection}
+            difficultySelection={difficultyFunc}
           />
         )}
       </button>
-      <button onClick={handleClick}>Start</button>
+      <button onClick={onStart()}>Start</button>
     </div>
   );
 };
