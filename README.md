@@ -32,8 +32,8 @@ In QuestionCard.tsx, I am fetching the questions from this <a href="https://open
 
 With functional dropdown:
 <br />
-<img src="./img/trivia-menu-1.png" height=500px/>
-<img src="./img/trivia-menu-2.png" height=440px/>
+<img src="./img/trivia-menu-1a.png" height=500px/>
+<img src="./img/trivia-menu-2a.png" height=440px/>
 
 ### After clicking the start button:
 
