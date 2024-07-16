@@ -4,7 +4,7 @@ import styles from "./Menu.module.scss";
 import { MenuType } from "../../types";
 
 const Menu: React.FC<MenuType> = ({
-  onStart,
+  setInvisible,
   difficultyFunc,
   difficultyOptions,
   selectDifficulty,
@@ -37,26 +37,30 @@ const Menu: React.FC<MenuType> = ({
           ? `${selectDifficulty} mode selected.`
           : "Select game difficulty"}
       </div>
-      <button
-        className={showDropdown ? "active" : undefined}
-        onClick={(): void => toggleDropdown()}
-        onBlur={(e: React.FocusEvent<HTMLButtonElement>): void =>
-          dismissHandler(e)
-        }
-      >
-        <div>
-          {selectDifficulty ? "Select: " + selectDifficulty : "Select..."}
-        </div>
-        {showDropdown && (
-          <Dropdown
-            selectDifficulty={difficultyOptions}
-            showDropDown={false}
-            toggleDropDown={(): void => toggleDropdown()}
-            difficultySelection={difficultyFunc}
-          />
-        )}
-      </button>
-      <button onClick={onStart()}>Start</button>
+      <div className={styles.Menu__selectDifficulty}>
+        <button
+          className={showDropdown ? "active" : undefined}
+          onClick={(): void => toggleDropdown()}
+          onBlur={(e: React.FocusEvent<HTMLButtonElement>): void =>
+            dismissHandler(e)
+          }
+        >
+          <div>
+            {selectDifficulty ? "Select: " + selectDifficulty : "Select..."}
+          </div>
+          {showDropdown && (
+            <Dropdown
+              selectDifficulty={difficultyOptions}
+              showDropDown={false}
+              toggleDropDown={(): void => toggleDropdown()}
+              difficultySelection={difficultyFunc}
+            />
+          )}
+        </button>
+      </div>
+      <div className={styles.Menu__start}>
+        <button onClick={setInvisible}>Start</button>
+      </div>
     </div>
   );
 };

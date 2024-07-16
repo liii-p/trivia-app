@@ -1,3 +1,17 @@
-// .Menu {
-//     display: flex;
-// }
+.Menu {
+  &__selectDifficulty {
+    padding: 30px 15px;
+  }
+
+  &__selectDifficulty > button {
+    width: 100px;
+    background-color: white;
+    color: black;
+  }
+
+  &__start > button {
+    width: 100px;
+    background-color: white;
+    color: black;
+  }
+}

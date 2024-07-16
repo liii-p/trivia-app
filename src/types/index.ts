@@ -1,22 +1,23 @@
 export type QuestionType = {
-  results: [
+  results?: [
     {
       question: string;
       correct_answer: string;
       incorrect_answers: string[];
     }
   ];
+  request?: string;
 };
 
 export type MenuType = {
-  onStart: Function;
+  setInvisible: any;
   difficultyFunc: Function;
   difficultyOptions: string[];
   selectDifficulty: string;
 };
 
 export type ActiveGameType = {
-  urlArgs: string;
+  selectDifficulty: string;
 };
 
 export type DropdownProps = {
