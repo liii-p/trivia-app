@@ -12,7 +12,7 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
   }, []);
 
   // use non-null assertion operator
-  const qu = questions!.results;
+  const qu = questions?.results;
 
   return (
     <div className={styles.QuestionCard}>

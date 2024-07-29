@@ -11,7 +11,7 @@ export type QuestionCardType = {
 };
 
 export type MenuType = {
-  setInvisible: Function;
+  setInvisible: React.MouseEventHandler<HTMLButtonElement>;
   difficultyFunc: Function;
   difficultyOptions: string[];
   selectDifficulty: string;

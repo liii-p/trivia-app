@@ -6,13 +6,11 @@ import QuestionCard from "./components/QuestionCard/QuestionCard";
 
 function App() {
   //const args = `?amount=1&difficulty=${selectDifficulty.toLowerCase()}&type=multiple`;
-  //const [visible, setVisible] = useState<boolean>(true);
-  const [selectDifficulty, setSelectDifficulty] = useState<string>("Easy");
+  const [notActive, setNotActive] = useState<boolean>(true);
+  const [selectDifficulty, setSelectDifficulty] = useState<string>("easy");
   const difficulties = () => {
-    return ["Easy", "Medium", "Hard"];
+    return ["easy", "medium", "hard"];
   };
-
-  let notActive = false;
 
   const difficultySelection = (difficulty: string) => {
     setSelectDifficulty(difficulty);
@@ -20,7 +18,7 @@ function App() {
 
   const handleClick = () => {
     console.log("Handling click.");
-    notActive = true;
+    setNotActive(false);
     console.log(notActive);
   };
 
