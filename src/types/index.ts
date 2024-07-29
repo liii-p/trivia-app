@@ -1,11 +1,9 @@
 export type QuestionType = {
-  results: [
-    {
-      question: string;
-      correct_answer: string;
-      incorrect_answers: string[];
-    }
-  ];
+  results: {
+    question: string;
+    correct_answer: string;
+    incorrect_answers: string[];
+  };
 };
 
 export type QuestionCardType = {

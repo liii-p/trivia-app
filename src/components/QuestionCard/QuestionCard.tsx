@@ -11,27 +11,23 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
     setQuestions(res.data);
   }, []);
 
-  //const qu = questions.results;
-  let qu = true;
+  // use non-null assertion operator
+  const qu = questions!.results;
+
   return (
     <div className={styles.QuestionCard}>
       {qu ? (
         <div>
-          {/* <h2>{qu.question}</h2>
-          <button>{qu.correct_answer}</button>
-          <button>{qu.incorrect_answers[0]}</button>
-          <button>{qu.incorrect_answers[1]}</button>
-          <button>{qu.incorrect_answers[2]}</button> */}
-          <h2>Question Title</h2>
+          <h2>{qu.question}</h2>
           <div className={styles.QuestionCard__buttons}>
             <div>
               <div className={styles.QuestionCard__buttonRow1}>
-                <button>Answer 1</button>
-                <button>Answer 2</button>
+                <button>{qu.correct_answer}</button>
+                <button>{qu.incorrect_answers[0]}</button>
               </div>
               <div className={styles.QuestionCard__buttonRow2}>
-                <button>Answer 3</button>
-                <button>Answer 4</button>
+                <button>{qu.incorrect_answers[1]}</button>
+                <button>{qu.incorrect_answers[2]}</button>
               </div>
             </div>
           </div>
