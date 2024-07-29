@@ -3,7 +3,7 @@ import "./App.css";
 import Menu from "./components/Menu/Menu.tsx";
 import QuestionCard from "./components/QuestionCard/QuestionCard";
 import useQuestions from "./hooks/useQuestions/useQuestions.ts";
-//import useQuestions from "./hooks/useQuestions/useQuestions.ts";
+import { QuestionType } from "../../types";
 
 function App() {
   //const args = `?amount=1&difficulty=${selectDifficulty.toLowerCase()}&type=multiple`;

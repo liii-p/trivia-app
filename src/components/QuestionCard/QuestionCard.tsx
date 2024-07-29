@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import useQuestions from "../../hooks/useQuestions/useQuestions";
 
 type Props = {
-  questions: QuestionType;
+  data: QuestionType;
 };
 
-const QuestionCard = (selectDifficulty: string) => {
+const QuestionCard = ({ selectDifficulty }: QuestionType, { data }: Props) => {
   const [questions, setQuestions] = useState([]);
   useEffect(() => {
     useQuestions(`${selectDifficulty}`).then((res) => {

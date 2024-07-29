@@ -7,16 +7,13 @@ export type QuestionType = {
     }
   ];
   request?: string;
+  selectDifficulty: string;
 };
 
 export type MenuType = {
   setInvisible: any;
   difficultyFunc: Function;
   difficultyOptions: string[];
-  selectDifficulty: string;
-};
-
-export type ActiveGameType = {
   selectDifficulty: string;
 };
 
