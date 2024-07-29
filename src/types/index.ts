@@ -1,17 +1,19 @@
 export type QuestionType = {
-  results?: [
+  results: [
     {
       question: string;
       correct_answer: string;
       incorrect_answers: string[];
     }
   ];
-  request?: string;
+};
+
+export type QuestionCardType = {
   selectDifficulty: string;
 };
 
 export type MenuType = {
-  setInvisible: any;
+  setInvisible: Function;
   difficultyFunc: Function;
   difficultyOptions: string[];
   selectDifficulty: string;

@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Menu from "./components/Menu/Menu.tsx";
 import QuestionCard from "./components/QuestionCard/QuestionCard";
-import useQuestions from "./hooks/useQuestions/useQuestions.ts";
-import { QuestionType } from "../../types";
+//import { QuestionType } from "./types";
 
 function App() {
   //const args = `?amount=1&difficulty=${selectDifficulty.toLowerCase()}&type=multiple`;
@@ -13,14 +12,16 @@ function App() {
     return ["Easy", "Medium", "Hard"];
   };
 
-  let notActive = true;
+  let notActive = false;
 
   const difficultySelection = (difficulty: string) => {
     setSelectDifficulty(difficulty);
   };
 
   const handleClick = () => {
-    notActive = false;
+    console.log("Handling click.");
+    notActive = true;
+    console.log(notActive);
   };
 
   return (
@@ -28,7 +29,7 @@ function App() {
       <h1>Trivia App</h1>
       {notActive ? (
         <Menu
-          setInvisible={handleClick()}
+          setInvisible={handleClick}
           difficultyFunc={difficultySelection}
           difficultyOptions={difficulties()}
           selectDifficulty={selectDifficulty}

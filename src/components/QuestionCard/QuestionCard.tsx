@@ -1,30 +1,44 @@
 import styles from "./QuestionCard.module.scss";
-import { QuestionType } from "../../types";
+import { QuestionType, QuestionCardType } from "../../types";
 import { useEffect, useState } from "react";
 import useQuestions from "../../hooks/useQuestions/useQuestions";
 
-type Props = {
-  data: QuestionType;
-};
+const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
+  const [questions, setQuestions] = useState<QuestionType | null>(null);
 
-const QuestionCard = ({ selectDifficulty }: QuestionType, { data }: Props) => {
-  const [questions, setQuestions] = useState([]);
   useEffect(() => {
-    useQuestions(`${selectDifficulty}`).then((res) => {
-      setQuestions(res.data);
-      console.log(res.data);
-    });
+    let res: any = useQuestions(`${selectDifficulty}`);
+    setQuestions(res.data);
   }, []);
-  const qu = questions.results[0];
-  return (
-    // Here we will either display the data or if it's not yet loaded, display some loading text
 
+  //const qu = questions.results;
+  let qu = true;
+  return (
     <div className={styles.QuestionCard}>
-      <h2>{qu.question}</h2>
-      <button>{qu.correct_answer}</button>
-      <button>{qu.incorrect_answers[0]}</button>
-      <button>{qu.incorrect_answers[1]}</button>
-      <button>{qu.incorrect_answers[2]}</button>
+      {qu ? (
+        <div>
+          {/* <h2>{qu.question}</h2>
+          <button>{qu.correct_answer}</button>
+          <button>{qu.incorrect_answers[0]}</button>
+          <button>{qu.incorrect_answers[1]}</button>
+          <button>{qu.incorrect_answers[2]}</button> */}
+          <h2>Question Title</h2>
+          <div className={styles.QuestionCard__buttons}>
+            <div>
+              <div className={styles.QuestionCard__buttonRow1}>
+                <button>Answer 1</button>
+                <button>Answer 2</button>
+              </div>
+              <div className={styles.QuestionCard__buttonRow2}>
+                <button>Answer 3</button>
+                <button>Answer 4</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
       <div>
         <button>Next</button>
       </div>

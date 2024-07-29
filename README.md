@@ -37,6 +37,9 @@ With functional dropdown:
 
 ### After clicking the start button:
 
-<img src="./img/trivia-start.png" height=500px/>
+<img src="./img/trivia-question.png" height=500px/>
 <br />
-As you can see in this image, the API is returning a "429 (Too many requests)" error which I am working on resolving.
+
+## What I'm currently working on:
+
+- Displaying fetched data
