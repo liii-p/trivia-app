@@ -1,56 +1,79 @@
 import styles from "./QuestionCard.module.scss";
 import { QuestionType, QuestionCardType } from "../../types";
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState, useRef } from "react";
 import useQuestions from "../../hooks/useQuestions/useQuestions";
-
-const baseURL = `https://opentdb.com/api.php`;
+import GameOver from "../GameOver/GameOver";
 
 const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
-  const [questions, setQuestions] = useState<QuestionType | null>(null);
+  const [questions, setQuestions] = useState<QuestionType>([]);
+  const [num, setNum] = useState(0);
+  const [pts, setPts] = useState(0);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const shuffle = (arr: any) => {
+    let currentIndex = arr.length;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+      // Pick a remaining element...
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [arr[currentIndex], arr[randomIndex]] = [
+        arr[randomIndex],
+        arr[currentIndex],
+      ];
+    }
+  };
+
+  const getAnswer: MouseEventHandler<HTMLButtonElement> = () => {
+    let userAnswer = buttonRef.current?.innerHTML;
+
+    // if (questions?[num].answer === userAnswer)  {
+    //   setPts(pts + 1);
+    // }
+    setNum(num + 1);
+  };
 
   useEffect(() => {
-    useQuestions(`${selectDifficulty}`).then((data) =>
-      setQuestions(data?.results)
-    );
-    // const useQuestions = async () => {
-    //   try {
-    //     const req = await fetch(
-    //       `${baseURL}?amount=1&difficulty=${selectDifficulty}&type=multiple`
-    //     );
-    //     const res = await req.json();
-    //     setQuestions(res.results);
-    //   } catch (err: any) {
-    //     console.log(err.message);
-    //   }
-    //},
-
-    // useQuestions();
+    useQuestions(`${selectDifficulty}`)
+      .then((res: any) => {
+        console.log(res);
+        setQuestions(
+          res.data.results?.map((item: any) => ({
+            question: item.question,
+            options: shuffle([...item.incorrect_answers, item.correct_answer]),
+            answer: item.correct_answer,
+          }))
+        );
+      })
+      .catch((err) => console.error(err));
   }, []);
+
+  let qu = questions?[num];
 
   return (
     <div className={styles.QuestionCard}>
-      {questions ? (
-        <div>
-          <h2>{questions.results.question}</h2>
-          <div className={styles.QuestionCard__buttons}>
-            <div>
-              <div className={styles.QuestionCard__buttonRow1}>
-                <button>{questions.results.correct_answer}</button>
-                <button>{questions.results.incorrect_answers[0]}</button>
+      {qu && (
+        <>
+          <h2>{qu.question}</h2>
+          {qu.map((question: any, index: number): JSX.Element => {
+            return (
+              <div>
+                <div className={styles.QuestionCard__buttons}>
+                  <div>
+                    <button key={index} onClick={getAnswer}>
+                      {question}
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div className={styles.QuestionCard__buttonRow2}>
-                <button>{questions.results.incorrect_answers[1]}</button>
-                <button>{questions.results.incorrect_answers[2]}</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <p>Loading...</p>
+            );
+          })}
+        </>
       )}
-      <div>
-        <button>Next</button>
-      </div>
+      {num === 10 && <GameOver points={pts} />}
     </div>
   );
 };

@@ -7,9 +7,9 @@ import QuestionCard from "./components/QuestionCard/QuestionCard";
 function App() {
   //const args = `?amount=1&difficulty=${selectDifficulty.toLowerCase()}&type=multiple`;
   const [notActive, setNotActive] = useState<boolean>(true);
-  const [selectDifficulty, setSelectDifficulty] = useState<string>("Easy");
+  const [selectDifficulty, setSelectDifficulty] = useState<string>("easy");
   const difficulties = () => {
-    return ["Easy", "Medium", "Hard"];
+    return ["easy", "medium", "hard"];
   };
 
   const difficultySelection = (difficulty: string) => {
