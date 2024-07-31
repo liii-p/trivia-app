@@ -33,9 +33,7 @@ const Menu: React.FC<MenuType> = ({
       {/* Add category dropdown selection */}
       {/* Add difficulty dropdown selection */}
       <div>
-        {selectDifficulty
-          ? `${selectDifficulty} mode selected.`
-          : "Select game difficulty"}
+        <p>{selectDifficulty} mode selected.</p>
       </div>
       <div className={styles.Menu__selectDifficulty}>
         <button
@@ -44,9 +42,10 @@ const Menu: React.FC<MenuType> = ({
           onBlur={(e: React.FocusEvent<HTMLButtonElement>): void =>
             dismissHandler(e)
           }
+          id="select"
         >
           <div>
-            {selectDifficulty ? "Select: " + selectDifficulty : "Select..."}
+            <p>Select: {selectDifficulty}</p>
           </div>
           {showDropdown && (
             <Dropdown
