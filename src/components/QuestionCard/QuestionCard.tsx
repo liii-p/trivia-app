@@ -5,7 +5,7 @@ import useQuestions from "../../hooks/useQuestions/useQuestions";
 import GameOver from "../GameOver/GameOver";
 
 const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
-  const [questions, setQuestions] = useState<QuestionType>([]);
+  const [questions, setQuestions] = useState<QuestionType | null>();
   const [num, setNum] = useState(0);
   const [pts, setPts] = useState(0);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -51,29 +51,38 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
       .catch((err) => console.error(err));
   }, []);
 
-  let qu = questions?[num];
+  let qu;
+  if (questions) {
+    qu = questions[num];
+  }
 
   return (
     <div className={styles.QuestionCard}>
-      {qu && (
-        <>
-          <h2>{qu.question}</h2>
-          {qu.map((question: any, index: number): JSX.Element => {
-            return (
-              <div>
-                <div className={styles.QuestionCard__buttons}>
+      {qu ? (
+        <div>
+          {qu && (
+            <>
+              <h2>{qu.question}</h2>
+              {qu.map((question: any, index: number): JSX.Element => {
+                return (
                   <div>
-                    <button key={index} onClick={getAnswer}>
-                      {question}
-                    </button>
+                    <div className={styles.QuestionCard__buttons}>
+                      <div>
+                        <button key={index} onClick={getAnswer}>
+                          {question}
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
-        </>
+                );
+              })}
+            </>
+          )}
+          {num === 10 && <GameOver points={pts} />}
+        </div>
+      ) : (
+        <p>Loading...</p>
       )}
-      {num === 10 && <GameOver points={pts} />}
     </div>
   );
 };

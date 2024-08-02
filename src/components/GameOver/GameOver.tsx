@@ -1,4 +1,6 @@
-const GameOver = (points: number) => {
+import { GameOverType } from "../../types";
+
+const GameOver = ({ points }: GameOverType) => {
   const reload = () => window.location.reload();
 
   return (

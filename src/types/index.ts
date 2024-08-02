@@ -9,6 +9,10 @@ export type QuestionType = {
   ];
 };
 
+export type GameOverType = {
+  points: number;
+};
+
 export type QuestionCardType = {
   selectDifficulty: string;
 };
