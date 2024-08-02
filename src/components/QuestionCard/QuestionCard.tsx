@@ -41,7 +41,7 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
       .then((res: any) => {
         console.log(res);
         setQuestions(
-          res.data.results?.map((item: any) => ({
+          res.results?.map((item: any) => ({
             question: item.question,
             options: shuffle([...item.incorrect_answers, item.correct_answer]),
             answer: item.correct_answer,
@@ -62,20 +62,19 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
         <div>
           {qu && (
             <>
-              <h2>{qu.question}</h2>
-              {qu.map((question: any, index: number): JSX.Element => {
-                return (
-                  <div>
-                    <div className={styles.QuestionCard__buttons}>
-                      <div>
-                        <button key={index} onClick={getAnswer}>
-                          {question}
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+              <h2 dangerouslySetInnerHTML={{ __html: qu.question }}></h2>
+              <div className={styles.QuestionCard__buttons}>
+                {qu.options?.map((item: string, index: number): JSX.Element => {
+                  console.log(item);
+                  return (
+                    <button
+                      key={index}
+                      onClick={getAnswer}
+                      dangerouslySetInnerHTML={{ __html: item }}
+                    ></button>
+                  );
+                })}
+              </div>
             </>
           )}
           {num === 10 && <GameOver points={pts} />}
