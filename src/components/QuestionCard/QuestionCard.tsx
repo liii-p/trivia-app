@@ -9,7 +9,6 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
   const [num, setNum] = useState(0);
   const [pts, setPts] = useState(0);
   const [gameOver, setGameOver] = useState(false);
-  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const shuffle = (arr: [...any[], string]) => {
     let currentIndex = arr.length;
@@ -51,9 +50,9 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
     qu = questions[num];
   }
 
-  let userAnswer = buttonRef.current?.innerHTML;
+  const getAnswer: MouseEventHandler<HTMLButtonElement> = (e) => {
+    const userAnswer = e.currentTarget.innerHTML;
 
-  const getAnswer: MouseEventHandler<HTMLButtonElement> = () => {
     if (qu?.answer === userAnswer) {
       setPts(pts + 1);
       setNum(num + 1);
