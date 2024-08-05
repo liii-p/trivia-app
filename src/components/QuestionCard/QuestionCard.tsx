@@ -61,9 +61,11 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
 
   return (
     <div className={styles.QuestionCard}>
-      {qu ? (
+      {num === 10 ? (
+        <GameOver points={pts} />
+      ) : (
         <div>
-          {qu && (
+          {qu ? (
             <>
               <h2 dangerouslySetInnerHTML={{ __html: qu.question }}></h2>
               <div className={styles.QuestionCard__buttons}>
@@ -76,11 +78,10 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
                 })}
               </div>
             </>
+          ) : (
+            <p>Loading...</p>
           )}
-          {num === 10 && <GameOver points={pts} />}
         </div>
-      ) : (
-        <p>Loading...</p>
       )}
     </div>
   );
