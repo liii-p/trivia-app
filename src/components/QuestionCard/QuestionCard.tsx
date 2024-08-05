@@ -8,6 +8,7 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
   const [questions, setQuestions] = useState<QuestionType | null>(null);
   const [num, setNum] = useState(0);
   const [pts, setPts] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const shuffle = (arr: [...any[], string]) => {
@@ -50,18 +51,20 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
     qu = questions[num];
   }
 
-  const getAnswer: MouseEventHandler<HTMLButtonElement> = () => {
-    let userAnswer = buttonRef.current?.innerHTML;
+  let userAnswer = buttonRef.current?.innerHTML;
 
+  const getAnswer: MouseEventHandler<HTMLButtonElement> = () => {
     if (qu?.answer === userAnswer) {
       setPts(pts + 1);
+      setNum(num + 1);
+    } else {
+      setGameOver(true);
     }
-    setNum(num + 1);
   };
 
   return (
     <div className={styles.QuestionCard}>
-      {num === 10 ? (
+      {gameOver ? (
         <GameOver points={pts} />
       ) : (
         <div>
