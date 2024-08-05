@@ -10,6 +10,22 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
   const [pts, setPts] = useState(0);
   const [gameOver, setGameOver] = useState(false);
 
+  useEffect(() => {
+    useQuestions(`${selectDifficulty}`)
+      .then((res: any) => {
+        console.log(res);
+        setQuestions(
+          res.results.map((item: any) => ({
+            question: item.question,
+            options: shuffle([...item.incorrect_answers, item.correct_answer]),
+            answer: item.correct_answer,
+          }))
+        );
+      })
+      .catch((err) => console.error(err));
+    console.log(questions);
+  }, []);
+
   const shuffle = (arr: [...any[], string]) => {
     let currentIndex = arr.length;
 
@@ -28,22 +44,6 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
 
     return arr;
   };
-
-  useEffect(() => {
-    useQuestions(`${selectDifficulty}`)
-      .then((res: any) => {
-        console.log(res);
-        setQuestions(
-          res.results.map((item: any) => ({
-            question: item.question,
-            options: shuffle([...item.incorrect_answers, item.correct_answer]),
-            answer: item.correct_answer,
-          }))
-        );
-      })
-      .catch((err) => console.error(err));
-    console.log(questions);
-  }, []);
 
   let qu: any;
   if (questions) {

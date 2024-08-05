@@ -19,7 +19,12 @@ Welcome to the trivia app where you can put your knowledge to the test. This app
 ## Process
 
 To begin with, I separated out the components, as seen under the "functions" folder.
-In QuestionCard.tsx, I am fetching the questions from this <a href="https://opentdb.com/">API</a>. Using the function RenderData, the data is (supposed to) be rendered. Currently, the data is not being rendered properly. QuestionCard.tsx is being called by Menu.tsx when (!visible) is true (which occurs when the user clicks the "Start" button).
+In QuestionCard.tsx, I am fetching the questions from this <a href="https://opentdb.com/">API</a>.
+I am using a useEffect to call useQuestions (which is fetching the API and its response).
+
+To display the data, I am using conditional rendering. First, I check the variable gameOver (declared as a useState(false)) and if it's true we return the GameOver component, otherwise we are returning the question. The function getAnswer checks if the userAnswer is correct and either increases the points and progresses to the next question or it sets gameOver to true, thus triggering the GameOver component.
+
+QuestionCard.tsx is being called by Menu.tsx when (!visible) is true (which occurs when the user clicks the "Start" button).
 
 ### Start menu:
 
@@ -47,4 +52,6 @@ With functional dropdown:
 
 ## What I'm currently working on:
 
-- Game over
+- Handling answers which are HTML encoded
+- Allow the user to select a category of questions
+- Add a time countdown to each question, when a question is not answered before the time is up, game ends
