@@ -55,3 +55,10 @@ With functional dropdown:
 - Handling answers which are HTML encoded
 - Allow the user to select a category of questions
 - Add a time countdown to each question, when a question is not answered before the time is up, game ends
+- Adding tests
+
+## How to Play
+
+- Clone the repository to your local machine
+- In a terminal, 'npm install' to install all necessary dependencies
+- In a terminal, 'npm run' to start the app.

@@ -1,8 +1,9 @@
 import styles from "./QuestionCard.module.scss";
 import { QuestionType, QuestionCardType } from "../../types";
-import { MouseEventHandler, useEffect, useState, useRef } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 import useQuestions from "../../hooks/useQuestions/useQuestions";
 import GameOver from "../GameOver/GameOver";
+import { decode } from "html-entities";
 
 const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
   const [questions, setQuestions] = useState<QuestionType | null>(null);
@@ -74,7 +75,7 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
                 {qu.options?.map((item: any, index: number): JSX.Element => {
                   return (
                     <button key={index} onClick={getAnswer}>
-                      {item}
+                      {decode(item)}
                     </button>
                   );
                 })}
