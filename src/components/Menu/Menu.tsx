@@ -29,12 +29,7 @@ const Menu: React.FC<MenuType> = ({
 
   return (
     <div className={styles.Menu}>
-      <p>Hello!</p>
       {/* Add category dropdown selection */}
-      {/* Add difficulty dropdown selection */}
-      <div>
-        <p>{selectDifficulty} mode selected.</p>
-      </div>
       <div className={styles.Menu__selectDifficulty}>
         <button
           className={showDropdown ? "active" : undefined}
@@ -45,7 +40,7 @@ const Menu: React.FC<MenuType> = ({
           id="select"
         >
           <div>
-            <p>Select: {selectDifficulty}</p>
+            <p>Selected: {selectDifficulty}</p>
           </div>
           {showDropdown && (
             <Dropdown

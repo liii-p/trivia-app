@@ -5,12 +5,12 @@ import useQuestions from "../../hooks/useQuestions/useQuestions";
 import GameOver from "../GameOver/GameOver";
 
 const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
-  const [questions, setQuestions] = useState<QuestionType | null>();
+  const [questions, setQuestions] = useState<QuestionType | null>(null);
   const [num, setNum] = useState(0);
   const [pts, setPts] = useState(0);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const shuffle = (arr: any) => {
+  const shuffle = (arr: [...any[], string]) => {
     let currentIndex = arr.length;
 
     // While there remain elements to shuffle...
@@ -25,15 +25,8 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
         arr[currentIndex],
       ];
     }
-  };
 
-  const getAnswer: MouseEventHandler<HTMLButtonElement> = () => {
-    let userAnswer = buttonRef.current?.innerHTML;
-
-    // if (questions?[num].answer === userAnswer)  {
-    //   setPts(pts + 1);
-    // }
-    setNum(num + 1);
+    return arr;
   };
 
   useEffect(() => {
@@ -41,7 +34,7 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
       .then((res: any) => {
         console.log(res);
         setQuestions(
-          res.results?.map((item: any) => ({
+          res.results.map((item: any) => ({
             question: item.question,
             options: shuffle([...item.incorrect_answers, item.correct_answer]),
             answer: item.correct_answer,
@@ -49,12 +42,22 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
         );
       })
       .catch((err) => console.error(err));
+    console.log(questions);
   }, []);
 
-  let qu;
+  let qu: any;
   if (questions) {
     qu = questions[num];
   }
+
+  const getAnswer: MouseEventHandler<HTMLButtonElement> = () => {
+    let userAnswer = buttonRef.current?.innerHTML;
+
+    if (qu?.answer === userAnswer) {
+      setPts(pts + 1);
+    }
+    setNum(num + 1);
+  };
 
   return (
     <div className={styles.QuestionCard}>
@@ -64,14 +67,11 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
             <>
               <h2 dangerouslySetInnerHTML={{ __html: qu.question }}></h2>
               <div className={styles.QuestionCard__buttons}>
-                {qu.options?.map((item: string, index: number): JSX.Element => {
-                  console.log(item);
+                {qu.options?.map((item: any, index: number): JSX.Element => {
                   return (
-                    <button
-                      key={index}
-                      onClick={getAnswer}
-                      dangerouslySetInnerHTML={{ __html: item }}
-                    ></button>
+                    <button key={index} onClick={getAnswer}>
+                      {item}
+                    </button>
                   );
                 })}
               </div>

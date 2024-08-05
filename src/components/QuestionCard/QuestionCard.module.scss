@@ -1,29 +1,21 @@
 .QuestionCard {
+  h2 {
+    width: 50%;
+    margin: 0 auto;
+  }
+
   button {
-    max-width: fit-content;
+    margin-top: 1rem;
     background-color: white;
+    padding: 15px 30px;
     color: black;
   }
 
   &__buttons {
     display: flex;
-    padding: 10px;
-    justify-content: center;
-  }
+    flex-direction: column;
+    width: 50%;
 
-  &__buttonRow1 {
-    padding: 5px;
-
-    button {
-      margin: 5px;
-    }
-  }
-
-  &__buttonRow2 {
-    padding: 5px;
-
-    button {
-      margin: 5px;
-    }
+    margin: 2rem auto;
   }
 }
