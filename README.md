@@ -28,18 +28,23 @@ In QuestionCard.tsx, I am fetching the questions from this <a href="https://open
 <br />
 <img src="./img/trivia-menu.png" height=500px/>
 
-### V1.1
+### V1.2
 
 With functional dropdown:
 <br />
-<img src="./img/trivia-menu-1a.png" height=500px/>
-<img src="./img/trivia-menu-2a.png" height=440px/>
+<img src="./img/trivia-menu-1.png" height=500px/>
+<img src="./img/trivia-menu-1a.png" height=440px/>
 
 ### After clicking the start button:
 
+<p>(V1.1)</p>
 <img src="./img/trivia-question.png" height=500px/>
+<br />
+
+<p>(V1.2)</p>
+<img src="./img/trivia-question-1a.png" height=500px/>
 <br />
 
 ## What I'm currently working on:
 
-- Displaying fetched data
+- Game over
