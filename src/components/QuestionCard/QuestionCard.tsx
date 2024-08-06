@@ -77,7 +77,11 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
               <div className={styles.QuestionCard__buttons}>
                 {qu.options?.map((item: any, index: number): JSX.Element => {
                   return (
-                    <button key={index} onClick={getAnswer}>
+                    <button
+                      key={index}
+                      onClick={getAnswer}
+                      data-testid="questionButtonTest"
+                    >
                       {decode(item)}
                     </button>
                   );

@@ -9,5 +9,14 @@ describe("QuestionCard", () => {
 
     const quHeading = screen.findByTestId("questionTitleTest");
     await waitFor(() => expect(quHeading).toBeTruthy());
+    const button = screen.findByTestId("questionButtonTest");
+    await waitFor(() => expect(button).toBeTruthy());
+  });
+
+  it("should render loading text", async () => {
+    render(<QuestionCard selectDifficulty="easy" />);
+
+    const loading = screen.findByRole("paragraph");
+    expect(loading).toBeTruthy();
   });
 });

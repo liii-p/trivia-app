@@ -26,7 +26,6 @@ const Menu: React.FC<MenuType> = ({
   };
 
   // If the user has clicked the start button, the questioncard will be displayed instead.
-
   return (
     <div className={styles.Menu}>
       {/* Add category dropdown selection */}
