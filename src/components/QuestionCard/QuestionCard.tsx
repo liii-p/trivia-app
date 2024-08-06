@@ -70,7 +70,10 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
         <div>
           {qu ? (
             <>
-              <h2 dangerouslySetInnerHTML={{ __html: qu.question }}></h2>
+              <h2
+                dangerouslySetInnerHTML={{ __html: qu.question }}
+                data-testid="questionTitleTest"
+              ></h2>
               <div className={styles.QuestionCard__buttons}>
                 {qu.options?.map((item: any, index: number): JSX.Element => {
                   return (

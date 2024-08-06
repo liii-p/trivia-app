@@ -1,5 +1,5 @@
 {
-  "include": ["src", "./setupTests.ts"],
+  "include": ["src", "./setupTests.ts", "tests"],
   "files": [],
   "references": [
     {
