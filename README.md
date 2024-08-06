@@ -1,3 +1,5 @@
+![Trivia App Test and Build](https://github.com/liii-p/trivia-app/actions/workflows/main.yml/badge.svg)
+
 # Trivia App
 
 Welcome to the trivia app where you can put your knowledge to the test. This app has been built using React Typescript.
