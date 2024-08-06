@@ -1,6 +1,3 @@
-- name: Setup Node.js environment
-  uses: actions/setup-node@v4.0.3
----
 name: Build and Test Trivia App
 
 on:
@@ -18,9 +15,9 @@ jobs:
         version: [20]
 
     steps:
-        - uses: actions/checkout@v2
+        - uses: actions/checkout@v4
         - name: Use Node.js ${{ matrix.version }}
-          uses: actions/setup-node@v2
+          uses: actions/setup-node@v4
           with:
             node-version: ${{ matrix.version }}
         - name: npm ci, build and test
