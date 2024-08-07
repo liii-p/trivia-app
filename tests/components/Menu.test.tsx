@@ -3,6 +3,11 @@ import { render, screen } from "@testing-library/react";
 import Menu from "../../src/components/Menu/Menu";
 import { useState } from "react";
 
+/*
+Given
+When
+Then
+*/
 describe.skip("<Menu />", () => {
   it("should render Menu properly", () => {
     const [notActive, setNotActive] = useState<boolean>(true);

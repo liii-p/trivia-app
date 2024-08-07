@@ -70,6 +70,7 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
         <div>
           {qu ? (
             <>
+              <p>{num}/10</p>
               <h2
                 dangerouslySetInnerHTML={{ __html: qu.question }}
                 data-testid="questionTitleTest"

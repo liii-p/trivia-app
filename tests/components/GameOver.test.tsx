@@ -2,6 +2,11 @@ import { render, screen } from "@testing-library/react";
 import { it, expect, describe } from "vitest";
 import GameOver from "../../src/components/GameOver/GameOver";
 
+/*
+Given the game is over
+When the GameOver component is triggered
+Then the GameOver component renders properly
+*/
 describe("<GameOver />", () => {
   it("should render GameOver properly", () => {
     const points = 3;

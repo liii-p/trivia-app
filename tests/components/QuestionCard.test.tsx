@@ -3,6 +3,11 @@ import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import QuestionCard from "../../src/components/QuestionCard/QuestionCard";
 
+/*
+Given
+When
+Then
+*/
 describe("QuestionCard", () => {
   it("should render QuestionCard with the associated question and buttons, when selectDifficulty is provided", async () => {
     render(<QuestionCard selectDifficulty="easy" />);
