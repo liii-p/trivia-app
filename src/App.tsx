@@ -8,9 +8,6 @@ function App() {
   //const args = `?amount=1&difficulty=${selectDifficulty.toLowerCase()}&type=multiple`;
   const [notActive, setNotActive] = useState<boolean>(true);
   const [selectDifficulty, setSelectDifficulty] = useState<string>("easy");
-  const difficulties = () => {
-    return ["easy", "medium", "hard"];
-  };
 
   const difficultySelection = (difficulty: string) => {
     setSelectDifficulty(difficulty);
@@ -29,7 +26,6 @@ function App() {
         <Menu
           setInvisible={handleClick}
           difficultyFunc={difficultySelection}
-          difficultyOptions={difficulties()}
           selectDifficulty={selectDifficulty}
         />
       ) : (

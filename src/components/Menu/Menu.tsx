@@ -6,12 +6,9 @@ import { MenuType } from "../../types";
 const Menu: React.FC<MenuType> = ({
   setInvisible,
   difficultyFunc,
-  difficultyOptions,
   selectDifficulty,
 }: MenuType): JSX.Element => {
   const [showDropdown, setshowDropdown] = useState<boolean>(false);
-
-  // TODO: set default difficulty, else check the user has selected difficulty
 
   // toggle the dropdown menu
   const toggleDropdown = () => {
@@ -43,7 +40,6 @@ const Menu: React.FC<MenuType> = ({
           </div>
           {showDropdown && (
             <Dropdown
-              selectDifficulty={difficultyOptions}
               showDropDown={false}
               toggleDropDown={(): void => toggleDropdown()}
               difficultySelection={difficultyFunc}

@@ -20,12 +20,12 @@ export type QuestionCardType = {
 export type MenuType = {
   setInvisible: React.MouseEventHandler<HTMLButtonElement>;
   difficultyFunc: Function;
-  difficultyOptions: string[];
+  difficultyOptions?: string[];
   selectDifficulty: string;
 };
 
 export type DropdownProps = {
-  selectDifficulty: string[];
+  selectDifficulty?: string[];
   showDropDown: boolean;
   toggleDropDown: Function;
   difficultySelection: Function;

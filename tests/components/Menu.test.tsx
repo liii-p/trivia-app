@@ -12,9 +12,6 @@ describe.skip("<Menu />", () => {
   it("should render Menu properly", () => {
     const [notActive, setNotActive] = useState<boolean>(true);
     const [selectDifficulty, setSelectDifficulty] = useState<string>("easy");
-    const difficulties = () => {
-      return ["easy", "medium", "hard"];
-    };
 
     const difficultySelection = (difficulty: string) => {
       setSelectDifficulty(difficulty);
@@ -25,12 +22,10 @@ describe.skip("<Menu />", () => {
       setNotActive(false);
       console.log(notActive);
     };
-
     render(
       <Menu
         setInvisible={handleClick}
         difficultyFunc={difficultySelection}
-        difficultyOptions={difficulties()}
         selectDifficulty={selectDifficulty}
       />
     );
