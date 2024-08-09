@@ -26,7 +26,7 @@ export type MenuType = {
 
 export type DropdownProps = {
   selectDifficulty?: string[];
-  showDropDown: boolean;
-  toggleDropDown: Function;
+  showDropDown?: boolean;
+  toggleDropDown?: Function;
   difficultySelection: Function;
 };

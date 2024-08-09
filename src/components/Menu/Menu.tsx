@@ -40,7 +40,6 @@ const Menu: React.FC<MenuType> = ({
           </div>
           {showDropdown && (
             <Dropdown
-              showDropDown={false}
               toggleDropDown={(): void => toggleDropdown()}
               difficultySelection={difficultyFunc}
             />

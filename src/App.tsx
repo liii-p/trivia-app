@@ -14,9 +14,7 @@ function App() {
   };
 
   const handleClick = () => {
-    console.log("Handling click.");
     setNotActive(false);
-    console.log(notActive);
   };
 
   return (
