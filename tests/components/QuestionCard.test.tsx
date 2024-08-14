@@ -2,29 +2,27 @@ import { it, expect, describe, vi, beforeEach } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import QuestionCard from "../../src/components/QuestionCard/QuestionCard";
-import { QuestionCardType } from "../../src/types";
-import useQuestions from "../../src/hooks/useQuestions/useQuestions";
-
-const mockUseQuestions = vi.fn();
+import * as useQuestionsHook from "../../src/hooks/useQuestions/useQuestions";
 
 const mockQuestions = [
   {
     question: "Question 1?",
-    options: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-    answer: "Answer 1",
+    correct_answer: "Answer 1",
+    incorrect_answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
   },
   {
     question: "Question 2?",
-    options: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-    answer: "Answer 2",
+    correct_answer: "Answer 2",
+    incorrect_answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
   },
 ];
 
-describe.skip("QuestionCard", () => {
-  beforeEach(() => {
-    mockUseQuestions.mockResolvedValue({ results: mockQuestions });
-  });
+describe("QuestionCard", () => {
+  const useQuestionsSpy = vi.spyOn(useQuestionsHook, "default");
 
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
   /*
   Given the user has selected a difficulty
   When the QuestionCard is called
@@ -58,12 +56,25 @@ describe.skip("QuestionCard", () => {
   When the user selects the correct answer
   Then it should display the next question
   */
-  it("should display the next question when the correct answer is clicked", async () => {
-    render(<QuestionCard selectDifficulty="easy" />);
+  it.skip("should display the next question when the correct answer is clicked", async () => {
+    const mockResponse = {
+      ok: true,
+      statusText: "OK",
+      json: async () => mockQuestions,
+    } as Response;
 
-    // Wait for the first question to be displayed
+    useQuestionsSpy.mockResolvedValue({
+      results: mockQuestions,
+    });
+
+    //expect(await useQuestionsSpy).toEqual(mockQuestions);
+
+    const { getByTestId } = render(<QuestionCard selectDifficulty="easy" />);
+
     await waitFor(() =>
-      expect(screen.getByTestId("questionTitleTest")).toBeInTheDocument()
+      expect(getByTestId("questionTitleTest").children.length).toBe(
+        mockQuestions.length
+      )
     );
 
     // Click the correct answer
