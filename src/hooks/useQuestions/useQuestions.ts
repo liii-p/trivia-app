@@ -1,6 +1,6 @@
 const baseURL = `https://opentdb.com/api.php`;
 
-const useQuestions = async (request?: string) => {
+export const useQuestions = async (request?: string) => {
   try {
     const res = await fetch(
       `${baseURL}?amount=10&difficulty=${request}&type=multiple`

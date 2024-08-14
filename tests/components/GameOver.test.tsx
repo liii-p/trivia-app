@@ -1,7 +1,13 @@
-import { render, screen } from "@testing-library/react";
-import { it, expect, describe } from "vitest";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { it, expect, describe, beforeEach, vi } from "vitest";
 import GameOver from "../../src/components/GameOver/GameOver";
 const points = 3;
+
+const originalWindowLocation = window.location;
+
+beforeEach(() => {
+  window.location = originalWindowLocation;
+});
 
 /*
 Given the game is over
@@ -28,8 +34,13 @@ Given the user is on the GameOver screen
 When the user clicks the play again button
 Then the app should reload
 */
-// describe("Play again", () => {
-//   it("should reload the app", () => {
-//     const wrapper = render(<GameOver points={points} />);
-//   });
-// });
+describe("Play again", () => {
+  vi.spyOn(window.location, "reload");
+  it("should reload the app when Play Again is clicked", () => {
+    render(<GameOver points={points} />);
+
+    fireEvent.click(screen.getByText("Play Again"));
+
+    expect(window.location.reload).toHaveBeenCalled();
+  });
+});

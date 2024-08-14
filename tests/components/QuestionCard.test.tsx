@@ -1,4 +1,13 @@
-import { it, expect, describe, vi, beforeEach } from "vitest";
+import {
+  it,
+  expect,
+  describe,
+  vi,
+  beforeEach,
+  Mock,
+  afterAll,
+  afterEach,
+} from "vitest";
 import {
   cleanup,
   fireEvent,
@@ -8,26 +17,37 @@ import {
 } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import QuestionCard from "../../src/components/QuestionCard/QuestionCard";
-import * as useQuestionsHook from "../../src/hooks/useQuestions/useQuestions";
 
-const mockQuestions = [
-  {
-    question: "Question 1?",
-    correct_answer: "Answer 1",
-    incorrect_answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-  },
-  {
-    question: "Question 2?",
-    correct_answer: "Answer 2",
-    incorrect_answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-  },
-];
+const mockQuestions = {
+  results: [
+    {
+      question: "Question 1?",
+      correct_answer: "Answer 1",
+      incorrect_answers: ["Answer 2", "Answer 3", "Answer 4"],
+    },
+    {
+      question: "Question 2?",
+      correct_answer: "Answer 2",
+      incorrect_answers: ["Answer 1", "Answer 3", "Answer 4"],
+    },
+  ],
+};
 
 describe("QuestionCard", () => {
-  const useQuestionsSpy = vi.spyOn(useQuestionsHook, "default");
+  afterEach(() => {
+    vi.clearAllMocks();
+    vi.resetAllMocks();
+  });
 
   beforeEach(() => {
-    cleanup();
+    global.fetch = vi.fn().mockResolvedValueOnce(
+      Promise.resolve({
+        ok: true,
+        json: () => {
+          return Promise.resolve(mockQuestions);
+        },
+      })
+    );
   });
   /*
   Given the user has selected a difficulty
@@ -63,47 +83,16 @@ describe("QuestionCard", () => {
   Then it should display the next question
   */
   it("should display the next question when the correct answer is clicked", async () => {
-    const mockResponse = {
-      ok: true,
-      statusText: "OK",
-      json: async () => mockQuestions,
-    } as Response;
+    render(<QuestionCard selectDifficulty="easy" />);
 
-    useQuestionsSpy
-      .mockResolvedValueOnce({
-        results: mockQuestions[0],
-      })
-      .mockResolvedValueOnce({
-        results: mockQuestions[1],
-      });
-
-    //expect(await useQuestionsSpy).toEqual(mockQuestions);
-
-    const { getByTestId } = render(<QuestionCard selectDifficulty="easy" />);
-
-    await waitFor(
-      () =>
-        expect(getByTestId("questionButtonTest").children.length).toBe(
-          mockQuestions.length
-        ),
-      {
-        timeout: 5000,
-        interval: 100,
-      }
-    );
-
-    await screen.findByText("Question 1");
+    //Find the first question
+    const questionTitle = await screen.findByText("Question 1?");
+    expect(questionTitle).not.toBeNull();
 
     // Click the correct answer
     fireEvent.click(screen.getByText("Answer 1"));
 
-    // Wait for the next question to be displayed
-    // await waitFor(() =>
-    //   expect(screen.getByTestId("questionTitleTest").innerHTML).toBe(
-    //     "Question 2?"
-    //   )
-    // );
-
+    //Verify the second question displays now
     await screen.findByText("Question 2?");
   });
 });
