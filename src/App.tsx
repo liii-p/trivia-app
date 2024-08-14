@@ -2,10 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import Menu from "./components/Menu/Menu.tsx";
 import QuestionCard from "./components/QuestionCard/QuestionCard";
-//import { QuestionType } from "./types";
 
 function App() {
-  //const args = `?amount=1&difficulty=${selectDifficulty.toLowerCase()}&type=multiple`;
   const [notActive, setNotActive] = useState<boolean>(true);
   const [selectDifficulty, setSelectDifficulty] = useState<string>("easy");
 

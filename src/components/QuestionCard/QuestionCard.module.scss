@@ -1,7 +1,13 @@
+@import "../../Assets/partials/_fonts";
+
 .QuestionCard {
   h2 {
     width: 50%;
     margin: 0 auto;
+  }
+
+  p {
+    font-family: "Quicksand", sans-serif;
   }
 
   button {
@@ -14,7 +20,7 @@
   &__buttons {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 35%;
 
     margin: 2rem auto;
   }

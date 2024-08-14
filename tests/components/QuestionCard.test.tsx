@@ -1,5 +1,11 @@
 import { it, expect, describe, vi, beforeEach } from "vitest";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import QuestionCard from "../../src/components/QuestionCard/QuestionCard";
 import * as useQuestionsHook from "../../src/hooks/useQuestions/useQuestions";
@@ -21,7 +27,7 @@ describe("QuestionCard", () => {
   const useQuestionsSpy = vi.spyOn(useQuestionsHook, "default");
 
   beforeEach(() => {
-    vi.clearAllMocks();
+    cleanup();
   });
   /*
   Given the user has selected a difficulty
@@ -56,35 +62,48 @@ describe("QuestionCard", () => {
   When the user selects the correct answer
   Then it should display the next question
   */
-  it.skip("should display the next question when the correct answer is clicked", async () => {
+  it("should display the next question when the correct answer is clicked", async () => {
     const mockResponse = {
       ok: true,
       statusText: "OK",
       json: async () => mockQuestions,
     } as Response;
 
-    useQuestionsSpy.mockResolvedValue({
-      results: mockQuestions,
-    });
+    useQuestionsSpy
+      .mockResolvedValueOnce({
+        results: mockQuestions[0],
+      })
+      .mockResolvedValueOnce({
+        results: mockQuestions[1],
+      });
 
     //expect(await useQuestionsSpy).toEqual(mockQuestions);
 
     const { getByTestId } = render(<QuestionCard selectDifficulty="easy" />);
 
-    await waitFor(() =>
-      expect(getByTestId("questionTitleTest").children.length).toBe(
-        mockQuestions.length
-      )
+    await waitFor(
+      () =>
+        expect(getByTestId("questionButtonTest").children.length).toBe(
+          mockQuestions.length
+        ),
+      {
+        timeout: 5000,
+        interval: 100,
+      }
     );
+
+    await screen.findByText("Question 1");
 
     // Click the correct answer
     fireEvent.click(screen.getByText("Answer 1"));
 
     // Wait for the next question to be displayed
-    await waitFor(() =>
-      expect(screen.getByTestId("questionTitleTest").innerHTML).toBe(
-        "Question 2?"
-      )
-    );
+    // await waitFor(() =>
+    //   expect(screen.getByTestId("questionTitleTest").innerHTML).toBe(
+    //     "Question 2?"
+    //   )
+    // );
+
+    await screen.findByText("Question 2?");
   });
 });

@@ -75,14 +75,13 @@ const QuestionCard = ({ selectDifficulty }: QuestionCardType) => {
                 dangerouslySetInnerHTML={{ __html: qu.question }}
                 data-testid="questionTitleTest"
               ></h2>
-              <div className={styles.QuestionCard__buttons}>
+              <div
+                className={styles.QuestionCard__buttons}
+                data-testid="questionButtonTest"
+              >
                 {qu.options?.map((item: any, index: number): JSX.Element => {
                   return (
-                    <button
-                      key={index}
-                      onClick={getAnswer}
-                      data-testid="questionButtonTest"
-                    >
+                    <button key={index} onClick={getAnswer}>
                       {decode(item)}
                     </button>
                   );
