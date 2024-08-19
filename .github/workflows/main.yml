@@ -2,6 +2,7 @@ name: Build and Test Trivia App
 
 on:
   push:
+    paths: frontend/**
     branches:
       - main
   pull_request:
