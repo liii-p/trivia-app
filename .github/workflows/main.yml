@@ -2,6 +2,7 @@ name: Build and Test Trivia App
 
 on:
   push:
+    paths: frontend/**
     branches:
       - main
   pull_request:
@@ -18,6 +19,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: frontend
       - name: Use Node.js ${{ matrix.version }}
         uses: actions/setup-node@v4
         with:
