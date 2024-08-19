@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Menu from "./components/Menu/Menu.tsx";
+import Menu from "./components/Menu/Menu";
 import QuestionCard from "./components/QuestionCard/QuestionCard";
 
 function App() {
