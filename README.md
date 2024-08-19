@@ -28,6 +28,10 @@ To display the data, I am using conditional rendering. First, I check the variab
 
 QuestionCard.tsx is being called by Menu.tsx when notActive is true (which occurs when the user clicks the "Start" button).
 
+---------------------- 19/08/2024
+
+After completing the MVP for the frontend, I have decided to venture into creating the backend myself to learn how to build an api and use CI/CD with Azure. See the "What I'm currently working on" section further down.
+
 ### Start menu:
 
 ### V1.0
@@ -63,9 +67,13 @@ While building this app, I struggled with a few things which ultimately have giv
 
 ## What I'm currently working on:
 
-- Handling answers which are HTML encoded (10/08/24 - Done! I simply used a HTML encoding/decoding library called html-entities)
+- Including CI/CD by containerising the backend with Docker and deploying the full stack app to Azure.
 - Allow the user to select a category of questions
 - Add a time countdown to each question, when a question is not answered before the time is up, game ends
+
+## Done!
+
+- Handling answers which are HTML encoded (10/08/24 - Done! I simply used a HTML encoding/decoding library called html-entities)
 - Adding tests
 
 ## How to Play
