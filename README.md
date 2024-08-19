@@ -33,27 +33,29 @@ QuestionCard.tsx is being called by Menu.tsx when notActive is true (which occur
 ### V1.0
 
 <br />
-<img src="./img/trivia-menu.png" height=500px/>
+<img src="./frontend/img/trivia-menu.png" height="500px"/>
 
 ### V1.2
 
 With functional dropdown:
 <br />
-<img src="./img/trivia-menu-1.png" height=500px/>
-<img src="./img/trivia-menu-1a.png" height=440px/>
+<img src="./frontend/img/trivia-menu-1.png" />
+<img src="./frontend/img/trivia-menu-1a.png" />
 
 ### After clicking the start button:
 
 <p>(V1.1)</p>
-<img src="./img/trivia-question.png" height=500px/>
+<img src="./frontend/img/trivia-question.png" height="500px"/>
 <br />
 
 <p>(V1.2)</p>
-<img src="./img/trivia-question-1a.png" height=500px/>
+<img src="./frontend/img/trivia-question-1a.png" />
 <br />
 
 ## Challenges
+
 While building this app, I struggled with a few things which ultimately have given me more confidence:
+
 - Handling the API response and getting it to display
 - Handling types with TypeScript (I came across multiple type errors throughout the development process)
 - Figuring out how to use .map to dynamically display values
