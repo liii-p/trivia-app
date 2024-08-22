@@ -39,5 +39,4 @@ public class QuestionController {
     public String updateQuestion(@PathVariable(value = "id") int id, @RequestBody Question questionDetails) throws QuestionNotFoundException {
         return questionService.updateQuestion(questionDetails);
     }
-
 }

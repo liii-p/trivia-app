@@ -22,17 +22,17 @@ public class AnswersController {
         return answersService.getAllAnswers();
     }
 
-    @GetMapping("/answers/{id}")
+    @GetMapping("/{id}")
     public Answers getAnswersById(@PathVariable int id) throws AnswersNotFoundException {
         return answersService.getAnswersById(id);
     }
 
-    @PostMapping("/answers")
+    @PostMapping()
     public String createAnswers(@RequestBody Answers answers) {
         return answersService.createAnswers(answers);
     }
 
-    @PutMapping("/answers/{id}")
+    @PutMapping("/{id}")
     public String updateAnswers(@PathVariable int id, @RequestBody Answers answersDetails) throws AnswersNotFoundException {
         return answersService.updateAnswers(answersDetails);
     }
