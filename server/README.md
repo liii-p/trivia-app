@@ -16,4 +16,4 @@
 - 22/08/2024: Added controllers, services and models for Question and Answers
 
 ## To-Do:
-- [] Add Quiz entity (joined table for question + answers)
+- [ ] Add Quiz entity (joined table for question + answers)
