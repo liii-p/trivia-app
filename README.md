@@ -68,7 +68,7 @@ While building this app, I struggled with a few things which ultimately have giv
 ## What I'm currently working on:
 
 - [ ] Implementing CI/CD in Azure with Azure Pipelines - currently, I have included a github actions workflow on the github repository which runs the frontend tests automatically.
-
+- [ ] Creating custom backend API
 - [ ] Containerising the backend with Docker and deploying the full stack app to Azure
 - [ ] Allow the user to select a category of questions
 - [ ] Add a time countdown to each question, when a question is not answered before the time is up, game ends
