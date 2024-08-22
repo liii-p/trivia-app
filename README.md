@@ -67,15 +67,13 @@ While building this app, I struggled with a few things which ultimately have giv
 
 ## What I'm currently working on:
 
-- Implementing CI/CD in Azure with Azure Pipelines - currently, I have included a github actions workflow on the github repository which runs the frontend tests automatically.
-- Containerising the backend with Docker and deploying the full stack app to Azure
-- Allow the user to select a category of questions
-- Add a time countdown to each question, when a question is not answered before the time is up, game ends
+- [ ] Implementing CI/CD in Azure with Azure Pipelines - currently, I have included a github actions workflow on the github repository which runs the frontend tests automatically.
 
-## Done!
-
-- Handling answers which are HTML encoded (10/08/24 - Done! I simply used a HTML encoding/decoding library called html-entities)
-- Adding tests
+- [ ] Containerising the backend with Docker and deploying the full stack app to Azure
+- [ ] Allow the user to select a category of questions
+- [ ] Add a time countdown to each question, when a question is not answered before the time is up, game ends
+- [x] Handling answers which are HTML encoded (10/08/24 - Done! I simply used a HTML encoding/decoding library called html-entities)
+- [x] Adding tests
 
 ## How to Play
 
