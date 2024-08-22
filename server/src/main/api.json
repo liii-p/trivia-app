@@ -7,11 +7,7 @@
       "category": "Entertainment: Board Games",
       "question": "Which card is on the cover of the Beta rulebook of &quot;Magic: The Gathering&quot;?",
       "correct_answer": "Bog Wraith",
-      "incorrect_answers": [
-        "Island",
-        "Rock Hydra",
-        "Elvish Archers"
-      ]
+      "incorrect_answers": ["Island", "Rock Hydra", "Elvish Archers"]
     },
     {
       "type": "multiple",
@@ -19,11 +15,7 @@
       "category": "Entertainment: Music",
       "question": "In which year did &quot;Caravan Palace&quot; release their first album?",
       "correct_answer": "2008",
-      "incorrect_answers": [
-        "2000",
-        "2015",
-        "2004"
-      ]
+      "incorrect_answers": ["2000", "2015", "2004"]
     },
     {
       "type": "multiple",
@@ -31,11 +23,7 @@
       "category": "Sports",
       "question": "Which country did Kabaddi, a contact sport involving tackling, originate from?",
       "correct_answer": "India",
-      "incorrect_answers": [
-        "Australia",
-        "Turkey",
-        "Cambodia"
-      ]
+      "incorrect_answers": ["Australia", "Turkey", "Cambodia"]
     },
     {
       "type": "multiple",
@@ -43,11 +31,7 @@
       "category": "Entertainment: Video Games",
       "question": "In Portal, what color is the Intelligence Core?",
       "correct_answer": "Blue",
-      "incorrect_answers": [
-        "Purple",
-        "Red",
-        "Orange"
-      ]
+      "incorrect_answers": ["Purple", "Red", "Orange"]
     },
     {
       "type": "multiple",
@@ -55,11 +39,7 @@
       "category": "Geography",
       "question": "What island in the Canary Islands was the scene of one of the worst air disasters in history with the collision of two jumbo jets?",
       "correct_answer": "Tenerife",
-      "incorrect_answers": [
-        "Fuerteventura",
-        "Gran Canaria",
-        "Maui"
-      ]
+      "incorrect_answers": ["Fuerteventura", "Gran Canaria", "Maui"]
     },
     {
       "type": "multiple",
@@ -67,11 +47,7 @@
       "category": "Entertainment: Television",
       "question": "In season one of the US Kitchen Nightmares, Gordan Ramsay tried to save 10 different restaurants. How many ended up closing afterwards?",
       "correct_answer": "9",
-      "incorrect_answers": [
-        "6",
-        "3",
-        "0"
-      ]
+      "incorrect_answers": ["6", "3", "0"]
     },
     {
       "type": "multiple",
@@ -79,11 +55,7 @@
       "category": "Entertainment: Cartoon &amp; Animations",
       "question": "How many episodes were in season five of Samurai Jack?",
       "correct_answer": "10",
-      "incorrect_answers": [
-        "12",
-        "11",
-        "13"
-      ]
+      "incorrect_answers": ["12", "11", "13"]
     },
     {
       "type": "multiple",
@@ -98,26 +70,12 @@
       ]
     },
     {
-      "type": "boolean",
-      "difficulty": "easy",
-      "category": "Entertainment: Cartoon &amp; Animations",
-      "question": "In the &quot;Shrek&quot; film franchise, Donkey is played by Eddie Murphy.",
-      "correct_answer": "True",
-      "incorrect_answers": [
-        "False"
-      ]
-    },
-    {
       "type": "multiple",
       "difficulty": "easy",
       "category": "Vehicles",
       "question": "Which car tire manufacturer is famous for its &quot;P Zero&quot; line?",
       "correct_answer": "Pirelli",
-      "incorrect_answers": [
-        "Goodyear",
-        "Bridgestone",
-        "Michelin"
-      ]
+      "incorrect_answers": ["Goodyear", "Bridgestone", "Michelin"]
     },
     {
       "type": "multiple",
@@ -125,11 +83,7 @@
       "category": "Entertainment: Music",
       "question": "Cryoshell, known for &quot;Creeping in My Soul&quot; did the advertising music for what Lego Theme?",
       "correct_answer": "Bionicle",
-      "incorrect_answers": [
-        "Hero Factory",
-        "Ben 10 Alien Force",
-        "Star Wars"
-      ]
+      "incorrect_answers": ["Hero Factory", "Ben 10 Alien Force", "Star Wars"]
     },
     {
       "type": "multiple",
@@ -137,11 +91,7 @@
       "category": "Entertainment: Board Games",
       "question": "The board game, Nightmare was released in what year?",
       "correct_answer": "1991",
-      "incorrect_answers": [
-        "1992",
-        "1989",
-        "1995"
-      ]
+      "incorrect_answers": ["1992", "1989", "1995"]
     },
     {
       "type": "multiple",
@@ -149,11 +99,7 @@
       "category": "Sports",
       "question": "Which African American is in part responsible for integrating  Major League baseball?",
       "correct_answer": "Jackie Robinson",
-      "incorrect_answers": [
-        "Curt Flood",
-        "Roy Campanella",
-        "Satchell Paige"
-      ]
+      "incorrect_answers": ["Curt Flood", "Roy Campanella", "Satchell Paige"]
     },
     {
       "type": "multiple",
@@ -185,11 +131,7 @@
       "category": "History",
       "question": "The ancient city of Chich&eacute;n Itz&aacute; was built by which civilization?",
       "correct_answer": "Mayans",
-      "incorrect_answers": [
-        "Aztecs",
-        "Incas",
-        "Toltecs"
-      ]
+      "incorrect_answers": ["Aztecs", "Incas", "Toltecs"]
     },
     {
       "type": "multiple",
@@ -197,31 +139,7 @@
       "category": "Entertainment: Film",
       "question": "In Big Hero 6, what were Baymax&#039;s motions modeled after?",
       "correct_answer": "Baby penguins",
-      "incorrect_answers": [
-        "Baby monkeys",
-        "Baby ostriches",
-        "Baby bears"
-      ]
-    },
-    {
-      "type": "boolean",
-      "difficulty": "easy",
-      "category": "Entertainment: Video Games",
-      "question": "Tony Hawk&#039;s extreme sports videogames revolve around performing professional BMX tricks.",
-      "correct_answer": "False",
-      "incorrect_answers": [
-        "True"
-      ]
-    },
-    {
-      "type": "boolean",
-      "difficulty": "easy",
-      "category": "General Knowledge",
-      "question": "Video streaming website YouTube was purchased in it&#039;s entirety by Facebook for US$1.65 billion in stock.",
-      "correct_answer": "False",
-      "incorrect_answers": [
-        "True"
-      ]
+      "incorrect_answers": ["Baby monkeys", "Baby ostriches", "Baby bears"]
     },
     {
       "type": "multiple",
@@ -229,11 +147,7 @@
       "category": "Mythology",
       "question": "Which of the following Mesopotamian mythological figures was NOT a deity?",
       "correct_answer": "Enkidu",
-      "incorrect_answers": [
-        "Enki",
-        "Enlil",
-        "Enkimdu"
-      ]
+      "incorrect_answers": ["Enki", "Enlil", "Enkimdu"]
     },
     {
       "type": "multiple",
@@ -241,11 +155,7 @@
       "category": "Vehicles",
       "question": "Which of the following car models has been badge-engineered (rebadged) the most?",
       "correct_answer": "Isuzu Trooper",
-      "incorrect_answers": [
-        "Holden Monaro",
-        "Suzuki Swift",
-        "Chevy Camaro"
-      ]
+      "incorrect_answers": ["Holden Monaro", "Suzuki Swift", "Chevy Camaro"]
     },
     {
       "type": "multiple",
@@ -253,11 +163,7 @@
       "category": "Sports",
       "question": "Which Formula 1 driver switched teams in the middle of the 2017 season?",
       "correct_answer": "Carlos Sainz Jr.",
-      "incorrect_answers": [
-        "Daniil Kvyat",
-        "Jolyon Palmer",
-        "Rio Haryanto"
-      ]
+      "incorrect_answers": ["Daniil Kvyat", "Jolyon Palmer", "Rio Haryanto"]
     },
     {
       "type": "multiple",
@@ -265,31 +171,7 @@
       "category": "Vehicles",
       "question": "Which car manufacturer created the &quot;Aventador&quot;?",
       "correct_answer": "Lamborghini",
-      "incorrect_answers": [
-        "Ferrari",
-        "Pagani",
-        "Bugatti"
-      ]
-    },
-    {
-      "type": "boolean",
-      "difficulty": "medium",
-      "category": "Entertainment: Music",
-      "question": "&quot;Neutral Milk Hotel&quot; is a real band.",
-      "correct_answer": "True",
-      "incorrect_answers": [
-        "False"
-      ]
-    },
-    {
-      "type": "boolean",
-      "difficulty": "medium",
-      "category": "Science: Computers",
-      "question": "It&#039;s not possible to format a write-protected DVD-R Hard Disk.",
-      "correct_answer": "True",
-      "incorrect_answers": [
-        "False"
-      ]
+      "incorrect_answers": ["Ferrari", "Pagani", "Bugatti"]
     },
     {
       "type": "multiple",
@@ -297,11 +179,7 @@
       "category": "Entertainment: Film",
       "question": "In the &quot;Jurassic Park&quot; universe, when did &quot;Jurassic Park: San Diego&quot; begin construction?",
       "correct_answer": "1985",
-      "incorrect_answers": [
-        "1988",
-        "1986",
-        "1993"
-      ]
+      "incorrect_answers": ["1988", "1986", "1993"]
     },
     {
       "type": "multiple",
@@ -309,11 +187,7 @@
       "category": "Entertainment: Video Games",
       "question": "Which of these games was NOT a Nintendo Switch launch title in the United States? ",
       "correct_answer": "Voez",
-      "incorrect_answers": [
-        "Just Dance 2017",
-        "Snipperclips",
-        "Fast RMX"
-      ]
+      "incorrect_answers": ["Just Dance 2017", "Snipperclips", "Fast RMX"]
     },
     {
       "type": "multiple",
@@ -321,21 +195,7 @@
       "category": "Entertainment: Video Games",
       "question": "Which character is from &quot;Splatoon&quot;?",
       "correct_answer": "Marie",
-      "incorrect_answers": [
-        "Cyrus",
-        "Palutena",
-        "Shulk"
-      ]
-    },
-    {
-      "type": "boolean",
-      "difficulty": "easy",
-      "category": "Sports",
-      "question": "In Rugby League, performing a &quot;40-20&quot; is punished by a free kick for the opposing team.",
-      "correct_answer": "False",
-      "incorrect_answers": [
-        "True"
-      ]
+      "incorrect_answers": ["Cyrus", "Palutena", "Shulk"]
     },
     {
       "type": "multiple",
@@ -343,11 +203,7 @@
       "category": "Entertainment: Video Games",
       "question": "What was the name of the canceled projected by Blizzard Entertainment that would be later become Overwatch?",
       "correct_answer": "Titan",
-      "incorrect_answers": [
-        "Omnic",
-        "Omega",
-        "Ghost"
-      ]
+      "incorrect_answers": ["Omnic", "Omega", "Ghost"]
     },
     {
       "type": "multiple",
@@ -355,11 +211,7 @@
       "category": "Entertainment: Music",
       "question": "The &quot;K&quot; in &quot;K-Pop&quot; stands for which word?",
       "correct_answer": "Korean",
-      "incorrect_answers": [
-        "Kenyan",
-        "Kazakhstan",
-        "Kuwaiti"
-      ]
+      "incorrect_answers": ["Kenyan", "Kazakhstan", "Kuwaiti"]
     },
     {
       "type": "multiple",
@@ -379,11 +231,7 @@
       "category": "Entertainment: Books",
       "question": "Which fictional English county was the setting for Thomas Hardy&#039;s novels?",
       "correct_answer": "Wessex",
-      "incorrect_answers": [
-        "Barsetshire",
-        "Fulchester",
-        "Ambridge"
-      ]
+      "incorrect_answers": ["Barsetshire", "Fulchester", "Ambridge"]
     },
     {
       "type": "multiple",
@@ -391,11 +239,7 @@
       "category": "History",
       "question": "The Tsar Bomba, the most powerful nuclear bomb ever tested, had a yield of 50 megatons but theoretically had a maximum yield of how much?",
       "correct_answer": "100 Megatons",
-      "incorrect_answers": [
-        "200 Megatons",
-        "75 Megatons",
-        "150 Megatons"
-      ]
+      "incorrect_answers": ["200 Megatons", "75 Megatons", "150 Megatons"]
     },
     {
       "type": "multiple",
@@ -439,11 +283,7 @@
       "category": "Entertainment: Film",
       "question": "Who is the director of the 1991 film &quot;Silence of the Lambs&quot;?",
       "correct_answer": "Jonathan Demme",
-      "incorrect_answers": [
-        "Stanley Kubrick",
-        "Frank Darabont",
-        "Michael Bay"
-      ]
+      "incorrect_answers": ["Stanley Kubrick", "Frank Darabont", "Michael Bay"]
     },
     {
       "type": "multiple",
@@ -451,11 +291,7 @@
       "category": "Vehicles",
       "question": "The difference between the lengths of a Boeing 777-300ER and an Airbus A350-1000 is closest to:",
       "correct_answer": "0.1m",
-      "incorrect_answers": [
-        "1m",
-        "10m ",
-        "100m"
-      ]
+      "incorrect_answers": ["1m", "10m ", "100m"]
     },
     {
       "type": "multiple",
@@ -463,21 +299,7 @@
       "category": "Entertainment: Music",
       "question": "Which artist curated the official soundtrack for &quot;The Hunger Games: Mockingjay - Part 1&quot;?",
       "correct_answer": "Lorde",
-      "incorrect_answers": [
-        "Kanye West",
-        "Tove Lo",
-        "Charli XCX"
-      ]
-    },
-    {
-      "type": "boolean",
-      "difficulty": "easy",
-      "category": "Entertainment: Film",
-      "question": "In the movie The Revenant, DiCaprio&#039;s character hunts down the killer of his son.",
-      "correct_answer": "True",
-      "incorrect_answers": [
-        "False"
-      ]
+      "incorrect_answers": ["Kanye West", "Tove Lo", "Charli XCX"]
     },
     {
       "type": "multiple",
@@ -497,11 +319,7 @@
       "category": "Sports",
       "question": "In Baseball, how many times does the ball have to be pitched outside of the strike zone before the batter is walked?",
       "correct_answer": "4",
-      "incorrect_answers": [
-        "1",
-        "2",
-        "3"
-      ]
+      "incorrect_answers": ["1", "2", "3"]
     },
     {
       "type": "multiple",
@@ -509,11 +327,7 @@
       "category": "Politics",
       "question": "Which letter do you need to have on a European driver license in order to ride any motorbikes?",
       "correct_answer": "A",
-      "incorrect_answers": [
-        "X",
-        "D",
-        "B"
-      ]
+      "incorrect_answers": ["X", "D", "B"]
     },
     {
       "type": "multiple",
@@ -545,9 +359,7 @@
       "category": "Vehicles",
       "question": "Ferrari has never made a V10 engine for any of its cars.",
       "correct_answer": "False",
-      "incorrect_answers": [
-        "True"
-      ]
+      "incorrect_answers": ["True"]
     },
     {
       "type": "multiple",
@@ -555,11 +367,7 @@
       "category": "Entertainment: Film",
       "question": "What is the birth name of Michael Caine?",
       "correct_answer": "Maurice Micklewhite",
-      "incorrect_answers": [
-        "Morris Coleman",
-        "Carl Myers",
-        "Martin Michaels"
-      ]
+      "incorrect_answers": ["Morris Coleman", "Carl Myers", "Martin Michaels"]
     },
     {
       "type": "multiple",
@@ -567,11 +375,7 @@
       "category": "Entertainment: Comics",
       "question": "In the Marvel Universe, the planet of Svartalfheim is home to what race?",
       "correct_answer": "Dark Elves",
-      "incorrect_answers": [
-        "Frost Giants",
-        "Kronans",
-        "Skrulls"
-      ]
+      "incorrect_answers": ["Frost Giants", "Kronans", "Skrulls"]
     },
     {
       "type": "multiple",
@@ -579,11 +383,183 @@
       "category": "Science: Gadgets",
       "question": "What are the base station trackers used for the HTC Vive called?",
       "correct_answer": "Lighthouse",
+      "incorrect_answers": ["Motion", "Constellation ", "Trackers"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Television",
+      "question": "Which race enjoys a glass of warm baghol in &quot;Star Trek&quot;?",
+      "correct_answer": "Klingon",
+      "incorrect_answers": ["Vulcan", "Human", "Botha"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Video Games",
+      "question": "What is the homeworld of the Elites from Halo?",
+      "correct_answer": "Sanghelios",
+      "incorrect_answers": ["Te", "Doisac", "Eayn"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Animals",
+      "question": "Unlike on most salamanders, this part of a newt is flat?",
+      "correct_answer": "Tail",
+      "incorrect_answers": ["Head", "Teeth", "Feet"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Geography",
+      "question": "The Maluku islands (informally known as the Spice Islands) belong to which country?",
+      "correct_answer": "Indonesia",
+      "incorrect_answers": ["Chile", "New Zealand", "Fiji"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Music",
+      "question": "What song originally performed by The Bee Gees in 1978 had a cover version by Steps 20 years later?",
+      "correct_answer": "Tragedy",
       "incorrect_answers": [
-        "Motion",
-        "Constellation ",
-        "Trackers"
+        "Night Fever",
+        "Stayin&#039; Alive",
+        "You Should Be Dancing"
       ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Japanese Anime &amp; Manga",
+      "question": "In &quot;Jewelpet Sunshine&quot;, what is the song that plays when Kanon and her friends bust out of prison?",
+      "correct_answer": "I Don&#039;t Want to Miss a Thing",
+      "incorrect_answers": ["Eye Of The Tiger", "Born to be Wild", "Ruby Ring"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Board Games",
+      "question": "When Magic: The Gathering was first solicited, which of the following was it originally titled?",
+      "correct_answer": "Mana Clash",
+      "incorrect_answers": ["Magic", "Magic Clash", "Mana Duels"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Music",
+      "question": "What year was Min Yoongi from South Korea boy band &quot;BTS&quot; born in?",
+      "correct_answer": "1993",
+      "incorrect_answers": ["1992", "1995", "1994"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Music",
+      "question": "Which of these artists did NOT remix the song &quot;Faded&quot; by Alan Walker?",
+      "correct_answer": "Skrillex",
+      "incorrect_answers": ["Ti&euml;sto", "Slushii", "Dash Berlin"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Television",
+      "question": "What is the Klingon&#039;s afterlife called?",
+      "correct_answer": "Sto-vo-kor",
+      "incorrect_answers": ["Valhalla", "Karon&#039;gahk", "New Jersey"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Board Games",
+      "question": "When was the board game Twister, released to the public?",
+      "correct_answer": "April 1966",
+      "incorrect_answers": ["September 1965", "January 1969", "February 1966"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Music",
+      "question": "Which artist released the 2012 single &quot;Harlem Shake&quot;, which was used in numerous YouTube videos in 2013?",
+      "correct_answer": "Baauer",
+      "incorrect_answers": ["RL Grime", "NGHTMRE", "Flosstradamus"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Japanese Anime &amp; Manga",
+      "question": "Which part from the JoJo&#039;s Bizarre Adventure manga is about a horse race across America?",
+      "correct_answer": "Part 7: Steel Ball Run",
+      "incorrect_answers": [
+        "Part 6: Stone Ocean",
+        "Part 3: Stardust Crusaders",
+        "Part 5: Golden Wind"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Video Games",
+      "question": "Which Kirby game first introduced Copy Abilities?",
+      "correct_answer": "Kirby&#039;s Adventure",
+      "incorrect_answers": [
+        "Kirby Super Star",
+        "Kirby&#039;s Dream Land 2",
+        "Kirby&#039;s Dream Land"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Music",
+      "question": "Which classical composer wrote the &quot;Moonlight Sonata&quot;?",
+      "correct_answer": "Ludvig Van Beethoven",
+      "incorrect_answers": [
+        "Chief Keef",
+        "Wolfgang Amadeus Mozart",
+        "Johannes Brahms"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Video Games",
+      "question": "Which Greek letter represents the &quot;Half-Life&quot; logo?",
+      "correct_answer": "Lambda",
+      "incorrect_answers": ["Omega", "Alpha", "Sigma"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Music",
+      "question": "Who performed &quot;I Took A Pill In Ibiza&quot;?",
+      "correct_answer": "Mike Posner",
+      "incorrect_answers": ["Avicii", "Robbie Williams", "Harry Styles"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Mythology",
+      "question": "Which Greek &amp; Roman god was known as the god of music, truth and prophecy, healing, the sun and light, plague, poetry, and more?",
+      "correct_answer": "Apollo",
+      "incorrect_answers": ["Aphrodite", "Artemis", "Athena"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Music",
+      "question": "Which Nirvana album had a naked baby on the cover?",
+      "correct_answer": "Nevermind",
+      "incorrect_answers": ["Bleach", "In Utero", "Incesticide"]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Science &amp; Nature",
+      "question": "How many planets are in our Solar System?",
+      "correct_answer": "Eight",
+      "incorrect_answers": ["Nine", "Seven", "Ten"]
     }
   ]
 }
