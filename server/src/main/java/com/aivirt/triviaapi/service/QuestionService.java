@@ -6,15 +6,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface QuestionService {
-    Question getQuestionById(String questionId);
+    Question getQuestionById(int questionId);
 
     List<Question> getAllQuestions();
 
-    Question createQuestion(Question question);
+    String createQuestion(Question question);
 
-    Question updateQuestion(Question question);
+    String updateQuestion(Question question);
 
-    void deleteQuestion(String questionId);
 }
