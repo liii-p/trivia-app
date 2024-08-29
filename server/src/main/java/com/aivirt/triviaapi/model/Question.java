@@ -1,25 +1,30 @@
 package com.aivirt.triviaapi.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "question")
 public class Question {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "difficulty")
     private String difficulty;
-    private String question_title;
+
+    @Column(name = "question_title")
+    private String questionTitle;
+
+    @Column(name = "category")
+    private String category;
 
     public Question() {}
 
-    public Question(int id, String difficulty, String question_title) {
+    public Question(int id, String difficulty, String category, String questionTitle) {
         this.id = id;
         this.difficulty = difficulty;
-        this.question_title = question_title;
+        this.category = category;
+        this.questionTitle = questionTitle;
     }
 
     public int getId() {
@@ -38,11 +43,19 @@ public class Question {
         this.difficulty = difficulty;
     }
 
-    public String getQuestion_title() {
-        return question_title;
+    public String getCategory() {
+        return category;
     }
 
-    public void setQuestion_title(String question_title) {
-        this.question_title = question_title;
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getQuestionTitle() {
+        return questionTitle;
+    }
+
+    public void setQuestionTitle(String question_title) {
+        this.questionTitle = questionTitle;
     }
 }

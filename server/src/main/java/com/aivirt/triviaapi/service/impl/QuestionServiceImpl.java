@@ -23,6 +23,11 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
+    public List<Question> getAllQuestionsByCategory(String category) {
+        return questionRepo.findByCategory(category);
+    }
+
+    @Override
     public List<Question> getAllQuestions() {
         return questionRepo.findAll();
     }

@@ -1,20 +1,5 @@
-import {
-  it,
-  expect,
-  describe,
-  vi,
-  beforeEach,
-  Mock,
-  afterAll,
-  afterEach,
-} from "vitest";
-import {
-  cleanup,
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from "@testing-library/react";
+import { it, expect, describe, vi, beforeEach, afterEach } from "vitest";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 import QuestionCard from "../../src/components/QuestionCard/QuestionCard";
 

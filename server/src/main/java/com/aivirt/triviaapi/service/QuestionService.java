@@ -9,6 +9,8 @@ import java.util.List;
 public interface QuestionService {
     Question getQuestionById(int questionId);
 
+    List<Question> getAllQuestionsByCategory(String category);
+
     List<Question> getAllQuestions();
 
     String createQuestion(Question question);
