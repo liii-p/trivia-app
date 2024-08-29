@@ -56,6 +56,24 @@ With functional dropdown:
 <img src="./frontend/img/trivia-question-1a.png" />
 <br />
 
+## Re-designing the UI
+
+After getting the basic frontend application working, I am now looking at re-designing the UI to make it more visually appealing. Here are a mock-up designs from Figma that I am planning to implement.
+
+- Main V1
+  <br />
+  <img src="./frontend/img/figma-design-1.png" height="500px"/>
+
+- Main V2
+  <br />
+  <img src="./frontend/img/figma-design-2.png" height="500px"/>
+
+- Mobile design
+  <br />
+  <img src="./frontend/img/figma-design-mobile.png" height="400px"/>
+
+I love purple, so as I was browsing various trivia app design, this one really caught my eye. You can take a look at the original Figma, <a href="https://www.figma.com/community/file/1302925785811021485">here</a>.
+
 ## Challenges
 
 While building this app, I struggled with a few things which ultimately have given me more confidence:
@@ -64,6 +82,7 @@ While building this app, I struggled with a few things which ultimately have giv
 - Handling types with TypeScript (I came across multiple type errors throughout the development process)
 - Figuring out how to use .map to dynamically display values
 - Testing with Vitest and React Testing Library (understanding how to translate my thought process into actual testing code was a challenge)
+- Moving onto the API, it was interesting to figure out the DB schema design and implementing it within Spring Boot.
 
 ## What I'm currently working on:
 
@@ -74,6 +93,7 @@ While building this app, I struggled with a few things which ultimately have giv
 - [ ] Add a time countdown to each question, when a question is not answered before the time is up, game ends
 - [x] Handling answers which are HTML encoded (10/08/24 - Done! I simply used a HTML encoding/decoding library called html-entities)
 - [x] Adding tests
+- [ ] Redesigning the UI
 
 ## How to Play
 
